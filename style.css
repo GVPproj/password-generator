@@ -1,0 +1,52 @@
+:root {
+  --grey-medium: #d5d4d8;
+  --green-light: #10b981;
+  --green-medium: #4adf86;
+  --green-neon: #55f991;
+  --blue-medium: #273549;
+  --blue-dark: #1f2937;
+  --bg-color: #1c1c1c;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Karla";
+  src: url("fonts/Karla-Regular.ttf") format("ttf");
+}
+
+* {
+  font-family: "Inter", Helvetica, sans-serif;
+  background-color: var(--bg-color);
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  background-color: var(--blue-dark);
+}
+
+h1 {
+  margin-top: 115px;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: -0.025em;
+}
+
+#container {
+  margin: 64px;
+  position: absolute;
+  height: 550px;
+  width: 550px;
+  background-color: var(--blue-dark);
+}
