@@ -91,3 +91,30 @@ const characters = [
   "?",
   "/",
 ]
+
+const btn = document.getElementById("generate-btn")
+const pw1El = document.getElementById("pw-1")
+const pw2El = document.getElementById("pw-2")
+
+let password1 = ""
+let password2 = ""
+
+
+
+btn.addEventListener("click", ()=>{
+    pw1El.textContent = randomPW()
+    pw2El.textContent = randomPW()
+})
+
+function randomNum(){
+    return Math.floor(Math.random() * characters.length)
+}
+
+function randomPW(){
+    let pw = ""
+    for(let i = 0; i < 15; i++){
+        pw += characters[randomNum()]
+    }
+    return pw
+}
+
