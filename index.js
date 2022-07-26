@@ -100,42 +100,48 @@ const clickInstruction = document.getElementById("click-instruction")
 let password1 = ""
 let password2 = ""
 
-btn.addEventListener("click", ()=>{
-    pw1El.textContent = randomPW()
-    pw2El.textContent = randomPW()
-    clickInstruction.style.opacity = 0
-    clickInstruction.textContent = ""
+let clicked = false
+
+btn.addEventListener("click", () => {
+  pw1El.textContent = randomPW()
+  pw2El.textContent = randomPW()
+  clickInstruction.style.opacity = 0
+  clickInstruction.textContent = ""
+  clicked = true
 })
 
-pw1El.addEventListener("click", ()=>{
-    navigator.clipboard.writeText(pw1El.textContent);
-    clickInstruction.textContent = "Copied to clipboard!"
+pw1El.addEventListener("click", () => {
+  navigator.clipboard.writeText(pw1El.textContent)
+  clickInstruction.textContent = "Copied to clipboard!"
 })
 
-pw1El.addEventListener("mouseover", ()=>{
+pw1El.addEventListener("mouseover", () => {
+  if (clicked) {
     clickInstruction.style.opacity = 100
     clickInstruction.textContent = "Click to copy"
+  }
 })
 
-pw2El.addEventListener("click", ()=>{
-    navigator.clipboard.writeText(pw2El.textContent);
-    clickInstruction.textContent = "Copied to clipboard!"
+pw2El.addEventListener("click", () => {
+  navigator.clipboard.writeText(pw2El.textContent)
+  clickInstruction.textContent = "Copied to clipboard!"
 })
 
-pw2El.addEventListener("mouseover", ()=>{
+pw2El.addEventListener("mouseover", () => {
+  if (clicked) {
     clickInstruction.style.opacity = 100
     clickInstruction.textContent = "Click to copy"
+  }
 })
 
-function randomNum(){
-    return Math.floor(Math.random() * characters.length)
+function randomNum() {
+  return Math.floor(Math.random() * characters.length)
 }
 
-function randomPW(){
-    let pw = ""
-    for(let i = 0; i < 15; i++){
-        pw += characters[randomNum()]
-    }
-    return pw
+function randomPW() {
+  let pw = ""
+  for (let i = 0; i < 15; i++) {
+    pw += characters[randomNum()]
+  }
+  return pw
 }
-
