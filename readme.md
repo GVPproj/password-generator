@@ -1,6 +1,7 @@
 # Password Generator
 
 - a small assignment from the Scrimba 'Front End Career Path'
+- use it here! https://gvpproj.github.io/password-generator/
 
 ## Tasks
 - generate two random 15-character passwords when user clicks a button ✅
