@@ -95,15 +95,36 @@ const characters = [
 const btn = document.getElementById("generate-btn")
 const pw1El = document.getElementById("pw-1")
 const pw2El = document.getElementById("pw-2")
+const clickInstruction = document.getElementById("click-instruction")
 
 let password1 = ""
 let password2 = ""
 
-
-
 btn.addEventListener("click", ()=>{
     pw1El.textContent = randomPW()
     pw2El.textContent = randomPW()
+    clickInstruction.style.opacity = 0
+    clickInstruction.textContent = ""
+})
+
+pw1El.addEventListener("click", ()=>{
+    navigator.clipboard.writeText(pw1El.textContent);
+    clickInstruction.textContent = "Copied to clipboard!"
+})
+
+pw1El.addEventListener("mouseover", ()=>{
+    clickInstruction.style.opacity = 100
+    clickInstruction.textContent = "Click to copy"
+})
+
+pw2El.addEventListener("click", ()=>{
+    navigator.clipboard.writeText(pw2El.textContent);
+    clickInstruction.textContent = "Copied to clipboard!"
+})
+
+pw2El.addEventListener("mouseover", ()=>{
+    clickInstruction.style.opacity = 100
+    clickInstruction.textContent = "Click to copy"
 })
 
 function randomNum(){
